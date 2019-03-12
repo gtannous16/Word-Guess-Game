@@ -1,63 +1,41 @@
-//JavaScript Document
-var $ = function (id) {
-    return document.getElementById(id);
-}
-
 //declare and initialize array
-var game = ["LUMOS", "ALOHOMORA", "QUIDDITCH", "GRYFFINDOR", "RAVENCLAW", "HUFFLEPUFF", "EXPECTO PATRONUM", "HOGWARTS", "DUMBLEDORE", "SLYTHERIN"]
-var choice = Math.floor(Math.random()*11);
-var answer = game[choice];
-var myLength = answer.length;
-var win = myLength;
-var letters = answer.split('');
-var attemptsLeft= 15;
-var output="";
-var userLetter="";
+const word = ["LUMOS", "ALOHOMORA", "QUIDDITCH", "GRYFFINDOR", "RAVENCLAW", "HUFFLEPUFF", "PATRONUS", "HOGWARTS", "DUMBLEDORE", "SLYTHERIN"];
+//choose word randomly
+let randWord = Math.floor(Math.random() * word.length);
+let chosenWord = word[randWord];
+let rightWord = [];
+let wrongWord = [];
+let underScore = [];
 
+console.log(chosenWord);
 
-var setup = function()
-{
-    for (var i=0; i< answer.length; i++)
-    {
-        display[i] = "- ";
-        output = output + display[i]
+// create underscores based on length of word
+let generateUnderscore = () => {
+    for(let i = 0; i < chosenWord.length; i++) {
+        underScore.push('_');
     }
-    document.getElementById("game").innerHTML= output;
-    output="";
+    return underScore;
 }
-
-var submit = function()
-{
-    output = "";
-    userLetter=$("letter").nodeValue;
-    $("letter").value ="";
-
-    for (var c= 0; c< answer.length; c++)
-    {
-        console.log(letters[c]);
-        if (userLetter.toUpperCase() == letters[c])
-        {
-            display[c] = userLetter.toUpperCase();
-            win--;
-        }
-            output = output + display[c] + " ";
+console.log(generateUnderscore());
+// Get users guess
+document.addEventListener('keyup', (event) => {
+    let keycode = event.keyCode;
+    let keyWord = String.fromCharCode(keycode);
+    console.log(keyWord);
+    console.log(chosenWord.indexOf(keyWord));
+//if users guess is right
+    if(chosenWord.indexOf(keyWord) > -1) {
+        console.log(true);
     }
-}
+    // add to right words array
+    rightWord.push(keyWord);
+    console.log(rightWord); 
+    wrongWord.push(keyWord);
+    console.log(wrongWord);  
+    }
+  
+    
+);
 
-document.getElementById("guesses").innerHTML= output;
-output="";
-attemptsLeft--;
 
-if (win < 1)
-{
-    document.getElementById("guesses").innerHTML = "YOU'RE A PREFECT!!!";
-}
-else if (attemptsLeft < 1)
-{
-    document.getElementById("guesses").innerHTML = "ROTTEN LUCK! TRY AGAIN!"
-}
-else 
-{
-    document.getElementById("guesses").innerHTML = "You have" + attemptsLeft + "guesses left";
-}
 
