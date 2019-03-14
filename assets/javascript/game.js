@@ -1,41 +1,100 @@
 //declare and initialize array
-const word = ["LUMOS", "ALOHOMORA", "QUIDDITCH", "GRYFFINDOR", "RAVENCLAW", "HUFFLEPUFF", "PATRONUS", "HOGWARTS", "DUMBLEDORE", "SLYTHERIN"];
-//choose word randomly
-let randWord = Math.floor(Math.random() * word.length);
-let chosenWord = word[randWord];
-let rightWord = [];
-let wrongWord = [];
-let underScore = [];
+var words = ["lumos", "alohomora", "quidditch", "gryffindor", "ravenclaw", "hufflepuff", "patronus", "hogwarts", "dumbledore","slytherin"]
+//assigning variabls 
+var randWord = "";
+var lettersOfWord = []
+var underScores = 0;
+var underScoresCorrect = [];
+var wrongGuess = [];
 
-console.log(chosenWord);
+//assigned variables for restart game
+var wins = 0;
+var losses = 0;
+var guessesRemaining = 15;
 
-// create underscores based on length of word
-let generateUnderscore = () => {
-    for(let i = 0; i < chosenWord.length; i++) {
-        underScore.push('_');
-    }
-    return underScore;
-}
-console.log(generateUnderscore());
-// Get users guess
-document.addEventListener('keyup', (event) => {
-    let keycode = event.keyCode;
-    let keyWord = String.fromCharCode(keycode);
-    console.log(keyWord);
-    console.log(chosenWord.indexOf(keyWord));
-//if users guess is right
-    if(chosenWord.indexOf(keyWord) > -1) {
-        console.log(true);
-    }
-    // add to right words array
-    rightWord.push(keyWord);
-    console.log(rightWord); 
-    wrongWord.push(keyWord);
-    console.log(wrongWord);  
-    }
-  
+//choose word randomly, seperating each letter &
+//adding underscores in place of each letter
+function Game() {
     
-);
+    randWord = words[Math.floor(Math.random() * words.length)];
+
+    lettersOfWord = randWord.split("");
+
+    underScores = lettersOfWord.length;
+
+    for (var i = 0; i < underScores; i++) {
+        underScoresCorrect.push("_");
+    }
+
+    document.getElementById("currentword").innerHTML = "  " + underScoresCorrect.join("  ");
+
+    console.log(randWord);
+    console.log(lettersOfWord)
+    console.log(underScores)
+    console.log(underScoresCorrect)
+}
 
 
+//restarting the game after it has been lost or won
+function reset() {
+    guessesRemaining = 15;
+    wrongGuess = [];
+    underScoresCorrect = [];
+    Game()
+}
 
+//this checks each letter guessed by player to see if its right or wrong
+function checkLetters(letter) {
+    var letterInWord = false;
+    
+    for (var i = 0; i < underScores; i++) {
+        if (randWord[i] == letter) {
+            letterInWord = true;
+        }
+    }
+    
+    if (letterInWord) {
+        for (var i = 0; i < underScores; i++) {
+            if (randWord[i] == letter) {
+                underScoresCorrect[i] = letter;
+            }
+        }
+    }
+   
+    else {
+        wrongGuess.push(letter);
+        guessesRemaining--;
+    }
+    console.log(underScoresCorrect);
+}
+
+//completing the game
+function complete() {
+    console.log("wins:" + wins + "| losses:" + losses + "| guesses left:" + guessesRemaining)
+//if all letters are guessed correctly then game resets and adds to winstracker
+//if there are no remaining guesses left game resets and adds to losstracker
+    if (lettersOfWord.toString() == underScoresCorrect.toString()) {
+        wins++;
+        reset()
+        document.getElementById("winstracker").innerHTML = " " + wins;
+
+    } else if (guessesRemaining === 0) {
+        losses++;
+        reset()
+        document.getElementById("losstracker").innerHTML = " " + losses;
+    }
+    
+    document.getElementById("currentword").innerHTML = "  " + underScoresCorrect.join(" ");
+    document.getElementById("guessesremaining").innerHTML = " " + guessesRemaining;
+}
+
+
+Game()
+document.onkeyup = function (event) {
+    var guesses = String.fromCharCode(event.keyCode).toLowerCase();
+    checkLetters(guesses); 
+    complete();
+    console.log(guesses);
+
+    document.getElementById("playerguesses").innerHTML = "  " + wrongGuess.join(" ");
+}

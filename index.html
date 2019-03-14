@@ -1,29 +1,65 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Harry Potter Word Guess</title>
-        <!--Reset-->
-        <link rel="stylesheet" href="assets/css/reset.css">
-        <!--css-->
-        <link rel="stylesheet" href="assets/css/style.css">
-        <!--javascript-->
-        <script src="assets/javascript/game.js"></script>
-    </head>
+<head>
+    <meta charset="utf-8" />
+    <title>Harry Potter Word Guess!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
 
-    <body background="assets/images/hogwarts.jpg" height:250px width:250px>
-        
-       
-    <div class="container">
-        <header>
-            <h1>Harry Potter Word Guessing Game!</h1>
-            <hr>
-            <h3>Guess a Letter to guess the word!</h3>
-        </header>
-    <div class="underscores">_ _ _ _</div>
-    <div class="rightGuess">Brilliant Guess!</div>
-    <div class="wrongGuess">Rotten Luck! Try Again!</div>
-    </div>
+
+    <body background="assets/images/hogwarts.jpg">
+
+        <div class="heading">
+            <h1>Welcome to Hogwarts!</h1>
+            <h1>The Best School of Witchcraft & Wizardry!</h1>
+            <br>
+            <h2>Harry Potter Word Guess</h2>
+        </div>
+
+        <div class="background">
+            <div class="container">
+
+                <h2>Click any Letter to Start!</h2>
+                <div>
+                    <img id="image" src="./assets/images/crest.jpeg" width="250px" height="250px">
+                </div>
+
+                <div>
+                    <h3 id="currentword">_ _ _ _ _</h3>
+                </div>
+                <div id="scoreboard">
+                   
+                    <div class="sidebar">
+                        <h3>Chances Left for the Right Spell!:
+                            <span id="guessesremaining"></span>
+                        </h3>
+                    </div>
+
+                    <div class="sidebar">
+                        <h3>Brilliant! These are Your Winnings!:
+                            <span id="winstracker"></span>
+                        </h3>
+                    </div>
+                
+                    <div class="sidebar">
+                        <h3>Losses:
+                            <span id="losstracker"></span>
+                        </h3>
+                    </div>
+
+                    <div class="sidebar">
+                        <h3>Rotten Luck! Try Another Letter!:
+                            <span id="playerguesses"></span>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="assets/javascript/game.js"></script>
 
     </body>
-</html>
 
+</html>
