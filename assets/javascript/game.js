@@ -1,15 +1,26 @@
 //declare and initialize array
 var words = ["lumos", 
- "mcgonagall", "alohomora", 
- "hippogriff","quidditch", 
- "durmstrang", "gryffindor", 
- "beauxbatons", "ravenclaw", 
- "quibbler", "hufflepuff", 
- "norbert", "patronus", 
- "hagrid", "hogwarts", 
- "harry",  "dumbledore",
-  "hermione", "ron", 
-  "gringotts","slytherin"]
+"mcgonagall", "alohomora", 
+"hippogriff","quidditch", 
+"durmstrang", "gryffindor", 
+"beauxbatons", "ravenclaw", 
+"quibbler", "hufflepuff", 
+"norbert", "patronus", 
+"hagrid", "hogwarts", 
+"harry",  "dumbledore",
+"hermione", "ron", 
+"gringotts","slytherin",
+"neville", "luna",
+"potions", "dobby",
+"draco", "voldemort",
+"hogsmeade", "diagonalley",
+"hedwig", "ginny",
+"bellatrix", "snape",
+"nagini","madeye",
+"sirius", "weaslytwins",
+"azkaban", "dementor"]
+
+
 //assigning variabls 
 var randWord = "";
 var lettersOfWord = []
@@ -43,7 +54,6 @@ function Game() {
     console.log(underScores)
     console.log(underScoresCorrect)
 }
-
 
 //restarting the game after it has been lost or won
 function reset() {
