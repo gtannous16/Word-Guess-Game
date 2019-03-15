@@ -18,7 +18,9 @@ var words = ["lumos",
 "bellatrix", "snape",
 "nagini","madeye",
 "sirius", "weaslytwins",
-"azkaban", "dementor"]
+"azkaban", "dementor",
+"headboy", "headgirl",
+"prefect", "maraudersmap"]
 
 
 //assigning variabls 
