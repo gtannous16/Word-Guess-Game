@@ -25,6 +25,7 @@ var words = ["lumos",
 
 //assigning variabls 
 var randWord = "";
+
 var lettersOfWord = []
 var underScores = 0;
 var underScoresCorrect = [];
@@ -51,7 +52,7 @@ function Game() {
 
     document.getElementById("currentword").innerHTML = "  " + underScoresCorrect.join("  ");
 
-    console.log(randWord);
+    console.log(randWord)
     console.log(lettersOfWord)
     console.log(underScores)
     console.log(underScoresCorrect)
@@ -64,6 +65,50 @@ function reset() {
     underScoresCorrect = [];
     Game()
 }
+
+
+//variables for audio function
+var hedwig7 = document.getElementById("hedwig7");
+var hedwig8 = document.getElementById("hedwig8");
+//audio function
+function aud() {
+  //lumos image
+    if (randWord === words[0]) {
+        hedwig7.play();
+        document.getElementById("image").src = "./assets/images/lumos.jpeg";
+    }
+   //mcgonagall image
+    else if (randWord === words[1]) {
+        hedwig7.play();
+        document.getElementById("image").src = "./assets/images/mcgonagall.jpeg";
+    }
+    //alohomora image
+    else if (randWord === words[2]) {
+        hedwig7.play();
+        document.getElementById("image").src = "./assets/images/alohomora.jpeg";
+    }
+    //hippogriff image
+    else if (randWord === words[3]) {
+        hedwig7.play();
+        document.getElementById("image").src = "./assets/images/hippogriff.jpeg";
+    }
+    //quidditch image
+    else if (randWord === words[4]) {
+        hedwig7.play();
+        document.getElementById("image").src = "./assets/images/quidditch.jpeg";
+    }
+    //durmstrang image
+    else if (randWord === words[5]) {
+        hedwig7.play();
+        document.getElementById("image").src = "./assets/images/durmstrang.jpeg";
+    }
+    //gryffindor image
+    else if (randWord === words[6]) {
+        hedwig7.play();
+        document.getElementById("image").src = "./assets/images/gryffindor.jpg";
+    }
+};
+
 
 //this checks each letter guessed by player to see if its right or wrong
 function checkLetters(letter) {
@@ -97,6 +142,7 @@ function complete() {
 //if there are no remaining guesses left game resets and adds to losstracker
     if (lettersOfWord.toString() == underScoresCorrect.toString()) {
         wins++;
+        aud()
         reset()
         document.getElementById("winstracker").innerHTML = " " + wins;
 
@@ -111,6 +157,8 @@ function complete() {
 }
 
 
+
+//start game function
 Game()
 document.onkeyup = function (event) {
     var guesses = String.fromCharCode(event.keyCode).toLowerCase();
