@@ -1,5 +1,15 @@
 //declare and initialize array
-var words = ["lumos", "alohomora", "quidditch", "gryffindor", "ravenclaw", "hufflepuff", "patronus", "hogwarts", "dumbledore","slytherin"]
+var words = ["lumos", 
+ "mcgonagall", "alohomora", 
+ "hippogriff","quidditch", 
+ "durmstrang", "gryffindor", 
+ "beauxbatons", "ravenclaw", 
+ "quibbler", "hufflepuff", 
+ "norbert", "patronus", 
+ "hagrid", "hogwarts", 
+ "harry",  "dumbledore",
+  "hermione", "ron", 
+  "gringotts","slytherin"]
 //assigning variabls 
 var randWord = "";
 var lettersOfWord = []
@@ -15,7 +25,7 @@ var guessesRemaining = 15;
 //choose word randomly, seperating each letter &
 //adding underscores in place of each letter
 function Game() {
-    
+
     randWord = words[Math.floor(Math.random() * words.length)];
 
     lettersOfWord = randWord.split("");
@@ -98,3 +108,7 @@ document.onkeyup = function (event) {
 
     document.getElementById("playerguesses").innerHTML = "  " + wrongGuess.join(" ");
 }
+
+//for audio headwigs theme 3 when website loads
+//headwigs theme 8 if you loose game
+//headwigs theme 7 if you win game

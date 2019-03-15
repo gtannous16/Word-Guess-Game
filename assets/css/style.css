@@ -1,5 +1,75 @@
 body {
     color:white;
-    font-size: 40px;
+    width: 100%;
+    font-family:jlr snitch; 
+    font-size: 50px;
+}
 
+h1 {
+    font-size: 43px;
+    border: solid 5px rgb(233, 196, 101);
+    text-align: center;
+    margin-top: 2%;
+    margin-left: 10%;
+    margin-right:10%;
+    padding: 15px;
+    font-family:new;
+}
+
+h2 {
+    font-family: hogwartswizard;
+    font-size: 30px;
+    padding-top: 10px;
+}
+
+h3 {
+    font-family: hogwartswizard;
+    font-size: 30px;
+    font-weight: bolder;
+    
+}
+
+img {
+    margin: 10px;
+}
+
+
+.sidebar {
+    padding: 5px;
+    position: relative;
+    margin-bottom: 5px;
+    font-size: 12px;
+}
+
+span {
+    padding-left: 3px;
+    padding-right:3px;
+    font-size: 30px;
+    font-family: hogwartswizard;
+}
+
+#playerguesses {
+    font-family:jlr snitch;
+    font-size: 50px;  
+}
+
+.container {
+   
+    margin-top: 5px;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 5px;
+    text-align: center;
+    border: solid 3px rgb(233, 196, 101);
+}
+
+#currentword {
+    font-size: 55px;
+    font-family: harry p;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+#scoreboard {
+    padding: 20px;
 }
