@@ -22,7 +22,8 @@ var words = ["lumos",
 "headboy", "headgirl",
 "prefect", "maraudersmap",
 "umbridge", "horcrux",
-"accio", "riddikulus"]
+"accio", "riddikulus",
+"muggle"]
 
 
 //assigning variabls 
@@ -355,6 +356,11 @@ function aud() {
         harrypotter.pause();
         hedwig7.play();
         document.getElementById("image").src = "./assets/images/riddikulus.gif";
+    }
+    else if (randWord === words[47]) {
+        harrypotter.pause();
+        hedwig7.play();
+        document.getElementById("image").src = "./assets/images/muggle.gif";
     }
 };
 
