@@ -23,8 +23,7 @@ var words = ["lumos",
     "prefect", "maraudersmap",
     "umbridge", "horcrux",
     "accio", "riddikulus",
-    "muggle"
-]
+    "muggle", "expelliarmus"]
 
 //assigning variabls 
 var randWord = "";
@@ -358,7 +357,13 @@ function aud() {
         harrypotter.pause();
         hedwig7.play();
         document.getElementById("image").src = "./assets/images/muggle.gif";
+    } 
+     else if (randWord === words[48]) {
+        harrypotter.pause();
+        hedwig7.play();
+        document.getElementById("image").src = "./assets/images/expelliarmus.gif";
     }
+    
 };
 
 //this checks each letter guessed by player to see if its right or wrong
