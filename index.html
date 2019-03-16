@@ -1,78 +1,78 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <title>Harry Potter Word Guess!</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="icon" href="assets/images/favicon.jpeg" type="image/x-icon"/>
+    <link rel="icon" href="assets/images/favicon.jpeg" type="image/x-icon" />
 </head>
 
-    <body background="assets/images/hogwarts.jpg">
+<body background="assets/images/hogwarts.jpg">
 
-        <div class="heading">
-            <h1>Welcome to Hogwarts!</h1>
-            <h1>The Best School of Witchcraft & Wizardry!</h1>
-            <br>
-        </div>
+    <div class="heading">
+        <h1>Welcome to Hogwarts!</h1>
+        <h1>The Best School of Witchcraft & Wizardry!</h1>
+        <br>
+    </div>
 
-        <div class="background">
-            <div class="container">
+    <div class="background">
+        <div class="container">
 
-                <h2>Click any Letter to Start!</h2>
-                <div>
-                    <img id="image" src="./assets/images/hogwartscrest.gif" width="200px" height="200px">
-                </div>
+            <h2>Click any Letter to Start!</h2>
+            <div>
+                <img id="image" src="./assets/images/hogwartscrest.gif" width="200px" height="200px">
+            </div>
 
-                <div>
-                    <h3 id="currentword">_ _ _ _ _</h3>
-                </div>
-                <div id="scoreboard">
-                   
-                    <div class="sidebar">
-                        <h3>Chances Left for the Right Spell!:
+            <div>
+                <h3 id="currentword">_ _ _ _ _</h3>
+            </div>
+            <div id="scoreboard">
+
+                <div class="sidebar">
+                    <h3>Chances Left for the Right Spell!:
                             <span id="guessesremaining"></span>
                         </h3>
-                    </div>
+                </div>
 
-                    <div class="sidebar">
-                        <h3>Brilliant! These are Your Winnings!:
+                <div class="sidebar">
+                    <h3>Brilliant! These are Your Winnings!:
                             <span id="winstracker"></span>
                         </h3>
-                    </div>
-                
-                    <div class="sidebar">
-                        <h3>Losses:
+                </div>
+
+                <div class="sidebar">
+                    <h3>Losses:
                             <span id="losstracker"></span>
                         </h3>
-                    </div>
+                </div>
 
-                    <div class="sidebar">
-                        <h3>Rotten Luck! Try Another Letter!:
+                <div class="sidebar">
+                    <h3>Rotten Luck! Try Another Letter!:
                             <span id="playerguesses"></span>
                         </h3>
-                    </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!--AUDIO FILES-->
-        <div>
-            <audio id="harrypotter">
-                <source src="./assets/audio/Harry Potter Orchestral.mp3" type="audio/mp3">
-            </audio>
-            <audio id="hedwig7">
-                <source src="./assets/audio/HedwigsTheme-7.mp3" type="audio/mp3">
-            </audio>
-            <audio id="hedwig8">
-                <source src="./assets/audio/HedwigsTheme-8.mp3" type="audio/mp3">
-            </audio>
-        </div>
+    <!--AUDIO FILES-->
+    <div>
+        <audio id="harrypotter">
+            <source src="./assets/audio/Harry Potter Orchestral.mp3" type="audio/mp3">
+        </audio>
+        <audio id="hedwig7">
+            <source src="./assets/audio/HedwigsTheme-7.mp3" type="audio/mp3">
+        </audio>
+        <audio id="hedwig8">
+            <source src="./assets/audio/HedwigsTheme-8.mp3" type="audio/mp3">
+        </audio>
+    </div>
 
-        <script src="assets/javascript/game.js"></script>
+    <script src="assets/javascript/game.js"></script>
 
-    </body>
+</body>
 
 </html>
-
