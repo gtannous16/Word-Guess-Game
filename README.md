@@ -4,7 +4,7 @@ Guess the secret Word!
 Live link to game:https://gtannous16.github.io/Word-Guess-Game/
 <hr>
 
-##Game Objective
+## Game Objective
  Guess the Harry Potter word by guessing and clicking a letter. If you get the letter correct, the letter will replace the underscore. If you get the letter incorrect, it will letter will show up under "Rotten Luck! Try another letter!"
 
 ## Instructions: 
@@ -15,7 +15,7 @@ Live link to game:https://gtannous16.github.io/Word-Guess-Game/
 
 HINT keep an eye on letters that you've already guessed wrong so you don't repeat them
 
-##Languages
+## Languages
 * HTML
 * CSS
 * JavaScript
